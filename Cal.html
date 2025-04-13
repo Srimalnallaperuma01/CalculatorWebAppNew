@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en">
 <head>
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="calculator" class="cal">
+    <div id="calculator">
         <h1 id="h1">Calculator</h1>
-        <input id="display" readonly></input>
+        <input id="display" readonly />
         <div id="buttons">
-            <button id="1" onclick="appendToDisplay('/')" class="opbtn">/</button>
-            <button id="2" onclick="appendToDisplay('1')">1</button>
-            <button id="3" onclick="appendToDisplay('2')">2</button>
-            <button id="4" onclick="appendToDisplay('3')">3</button>
-            <button id="5" onclick="appendToDisplay('*')" class="opbtn">*</button>
-            <button id="6" onclick="appendToDisplay('4')">4</button>
-            <button id="7" onclick="appendToDisplay('5')">5</button>
-            <button id="8" onclick="appendToDisplay('6')">6</button>
-            <button id="9" onclick="appendToDisplay('+')" class="opbtn">+</button>
-            <button id="0" onclick="appendToDisplay('7')">7</button>
-            <button id="." onclick="appendToDisplay('8')">8</button>
-            <button id="+" onclick="appendToDisplay('9')">9</button>
-            <button id="-" onclick="appendToDisplay('-')" class="opbtn">-</button>
-            <button id="*" onclick="appendToDisplay('0')">0</button>
-            <button id="/" onclick="appendToDisplay('.')">.</button>
-            <button id="=" onclick="calculate()" class="sum">=</button>
-            <button id="C" onclick="clearDisplay()" class="clear">C</button>
-
-
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="opbtn" onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="opbtn" onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="opbtn" onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button id="equal" class="sum" onclick="calculate()">=</button>
+            <button id="clear" class="clear" onclick="clearDisplay()">C</button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

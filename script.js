@@ -1,48 +1,36 @@
 const display = document.getElementById("display");
 
-function appendToDisplay(input){
+// Append input to display
+function appendToDisplay(input) {
     display.value += input;
 }
 
-function clearDisplay(){
-    display.value="";
+// Clear the display
+function clearDisplay() {
+    display.value = "";
 }
 
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-      calculate(); // Call your function when Enter is pressed
-    }
-  });
-
-function calculate(){
-    try{
-    display.value = eval(display.value);
-    }
-
-    catch(a){
-        display.value = "Error";
+// Perform the calculation
+function calculate() {
+    try {
+        display.value = eval(display.value); // eval is used for simplicity but beware of security risks in complex applications
+    } catch (error) {
+        display.value = "Error"; // If there's an error in the calculation, show Error
     }
 }
 
-document.addEventListener("keydown",(event)=>
-    {
-        if(event.key == "Enter"){
-            calculate();
-        }
-        else if(event.key == "Backspace"){
-            clearDisplay();
-        }
-        else if(event.key == "Escape"){
-            clearDisplay();
-        }
-        else if(event.key == "Delete"){
-            clearDisplay();
-        }
-        else if(event.key == "c"){
-            clearDisplay();
-        }
-        else if(!isNaN(event.key) || event.key == "+" || event.key == "-" || event.key == "*" || event.key == "/"){
-            display.value += event.key;
-        }   
-     }
-)
+// Add event listener for keydown event (handling all key actions)
+document.addEventListener("keydown", (event) => {
+    // Handle Enter key
+    if (event.key === "Enter") {
+        calculate(); // Call calculate function when Enter is pressed
+    }
+    // Handle Backspace, Escape, Delete, and 'C' for clearing display
+    else if (event.key === "Backspace" || event.key === "Escape" || event.key === "Delete" || event.key === "c") {
+        clearDisplay(); // Clear the display
+    }
+    // Handle numeric keys and operators
+    else if (!isNaN(event.key) || ["+", "-", "*", "/"].includes(event.key)) {
+        appendToDisplay(event.key); // Append the key to the display if it's a number or operator
+    }
+});
