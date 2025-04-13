@@ -8,6 +8,12 @@ function clearDisplay(){
     display.value="";
 }
 
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      calculate(); // Call your function when Enter is pressed
+    }
+  });
+
 function calculate(){
     try{
     display.value = eval(display.value);
